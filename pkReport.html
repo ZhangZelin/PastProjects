@@ -1,0 +1,211 @@
+﻿<form>
+<div id="reportForm" class="report-body">
+    <div style="text-align: center; font-weight: bold">
+        <h4>Patient-Centered Decision Making Algorithm</h4>
+        <h5 style="margin-left: 50px;">for Deep Brain Stimulation Surgery of Parkinson’s Disease</h5>
+        <br/>
+    </div>
+    <div class="col-sm-12">
+        <div>
+            <label class="report-question">{{q0}}</label>
+        </div>
+        <div>
+            <ul style="list-style-type: disc">
+                <li>Yes</li>
+            </ul>
+        </div>
+        <div>
+            <label class="report-question">{{q1}}</label>
+        </div>
+        <div>
+            <ul style="list-style-type: disc">
+                <li>{{a1}}</li>
+            </ul>
+        </div>
+        <div>
+            <label class="report-question">{{q2}}</label>
+        </div>
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a2LeftAnswers.length>0">{{a2LeftCategory}}</div>
+                <ul ng-repeat="aa in a2LeftAnswers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+            <dd>
+                <div class="report-category" ng-if="a2RightAnswers.length>0">{{a2RightCategory}}</div>
+                <ul ng-repeat="aa in a2RightAnswers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a3LeftAnswers.length>0">{{a3LeftCategory}}</div>
+                <ul ng-repeat="aa in a3LeftAnswers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+            <dd>
+                <div class="report-category" ng-if="a3RightAnswers.length>0">{{a3RightCategory}}</div>
+                <ul ng-repeat="aa in a3RightAnswers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+
+        <div>
+            <label class="report-question">{{q4}}</label>
+        </div>
+        <div ng-repeat="aa in a4Answers" class="ranswer">
+            <ul style="list-style-type: disc">
+                <li ng-if="aa">{{aa}}</li>
+            </ul>
+        </div>
+
+        <div>
+            <label class="report-question">{{q5}}</label>
+        </div>
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a5Answers.length>0">{{a5AnswersCategory}}</div>
+                <ul ng-repeat="aa in a5Answers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dd ng-if="showA6Category">
+                <div class="report-category" >{{a6AnswersCategory}}</div>
+                <ul style="list-style-type: disc">
+                    <li ng-repeat="aa in a6Answers" ng-if="aa.value.length>0">
+                        {{aa.subTitle}}
+                        <ul ng-repeat="a in aa.value" style="list-style-type: disc">
+                            <li ng-if="a">{{a}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a7Answers.length>0">{{a7AnswersCategory}}</div>
+                <ul ng-repeat="aa in a7Answers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a8Answers.length>0">{{a8AnswersCategory}}</div>
+                <ul ng-repeat="aa in a8Answers" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl ng-repeat="aa in a9Answers">
+            <dd>
+                <div class="report-category"  ng-if="aa.value.length>0">{{aa.category}}</div>
+                <ul ng-repeat="a in aa.value" style="list-style-type: disc">
+                    <li ng-if="a">{{a}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+
+        <div>
+            <label class="report-question">Medication have tried and Current Medication Regimen</label>
+        </div>
+        <dl ng-repeat="aa in a11Answers">
+            <dd>
+                <div class="report-category"  ng-if="aa.items.length>0">{{aa.value}}</div>
+                <ul style="list-style-type: disc" ng-repeat="item in aa.items">
+                    <li ng-if="item"><span>{{item}} : {{aa.dosages[$index]}}(mg/day)</span></li>
+                </ul>
+            </dd>
+        </dl>
+
+        <div><label class="report-question">{{q12}}</label>
+        </div>
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a12Answers.value.first!='' || a12Answers.value.second!='' || a12Answers.value.third!='' || a12Answers.value.fourth!=''">{{a12Answers.category}}</div>
+                <ul ng-repeat="aa in a12Answers.value" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a12Answers.value.first!='' || a12Answers.value.second!='' || a12Answers.value.third!='' || a12Answers.value.fourth!='' ">{{a13Answers.category}}</div>
+                <ul ng-repeat="aa in a13Answers.value" style="list-style-type: disc">
+                    <li ng-if="aa">{{aa}}</li>
+                </ul>
+            </dd>
+        </dl>
+
+        <div>
+            <label class="report-question">{{q16}}</label>
+        </div>
+        <dl>
+            <dd>
+                <div class="report-category"  ng-if="a16AnswersLeftAnswer.length>0">{{a16AnswersLeftCategory}}</div>
+                <ul ng-repeat="a in a16AnswersLeftAnswer" style="list-style-type: disc">
+                    <li ng-if="a">{{a}}</li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+                <div class="report-category" ng-if="a16AnswersRightAnswer.length>0">{{a16AnswersRightCategory}}</div>
+                <ul ng-repeat="a in a16AnswersRightAnswer" style="list-style-type: disc">
+                    <li ng-if="a">{{a}}</li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="col-sm-10 new-page">
+        <div>
+            <fieldset>
+                <div kendo-chart
+                     k-title="{ text: 'Symptoms Column Chart', position: 'bottom' }"
+                     k-legend="{ visible: 'false' }"
+                     k-series-defaults="{ type: 'column'  }"
+                     k-series="[
+                                 { field: 'BeforeDBS', name: 'Before DBS', color: 'red' },
+                                 { field: 'AfterDBS', name: 'After DBS', color: 'green' }
+                              ]"
+                     k-value-axis="{ min:0, max:4}"
+                     k-category-axis="{ field: 'Symptom' , labels: { rotation: '-40' }}"
+                     k-data-source="symptomFrequency"
+                     style="height: 400px;">
+                </div>
+            </fieldset>
+
+            <fieldset style="margin-top: 30px;">
+                <div kendo-chart
+                     k-title="{ text: 'Symptoms Radar Line Chart', position: 'bottom' }"
+                     k-series-defaults="{ type: 'radarLine' }"
+                     k-series="[
+                                 { field: 'BeforeDBS', color: 'red' },
+                                 { field: 'AfterDBS', color: 'green'}
+                              ]"
+                     k-category-axis="{ field: 'Symptom' }"
+                     k-data-source="symptomFrequency"
+                     style="height: 350px;"></div>
+            </fieldset>
+        </div>
+
+    </div>
+
+</div>
+
+</form>
